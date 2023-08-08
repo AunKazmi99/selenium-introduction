@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="E-Commerce App Test Cases">
+
+
+    <listeners>
+        <listener class-name="TestComponents.Listeners"/>
+    </listeners>
+
+
+    <test thread-count="5" name="Error Validations">
+        <classes>
+            <class name="Tests.ErrorValidationTest"/>
+        </classes>
+    </test>
+</suite>
+
+
+
+
+
+
+
+
+<!--<suite name="Introduction to TestNG">-->
+<!--    <listeners>-->
+<!--        <listener class-name="TestNG.TestNGListeners"/>-->
+<!--    </listeners>-->
+<!--    -->
+<!--    <test name="1st Test Folder">-->
+<!--        <parameter name="name" value="Hello World"/>-->
+<!--        <classes>-->
+<!--            <class name="TestNG.TestNGBasics"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="2nd Test Folder">-->
+<!--        <classes>-->
+<!--            <class name="TestNG.TestNGBasics2"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--</suite>-->
