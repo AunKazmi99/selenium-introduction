@@ -1,7 +1,9 @@
 package Excel;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -17,13 +19,14 @@ public class DataDriven {
         ArrayList<String> list = new ArrayList<>();
 
         FileInputStream fileInputStream = new FileInputStream("C:\\Users\\AunAbbas\\Desktop\\DemoData.xlsx");
-        XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
+        XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream); //needs FileInputStream argument
 
         int sheets = workbook.getNumberOfSheets();
         for (int i = 0; i < sheets; i++)
         {
             if (workbook.getSheetName(i).equalsIgnoreCase("testdata"))
             {
+
                 XSSFSheet sheet = workbook.getSheetAt(i);
                 Iterator<Row> rowIterator = sheet.iterator(); //Sheet is a collection of rows
                 Row firstRow = rowIterator.next();
@@ -49,7 +52,16 @@ public class DataDriven {
                         Iterator<Cell> ce = r.cellIterator();
                         while (ce.hasNext())
                         {
-                            list.add(ce.next().getStringCellValue());
+                            Cell cell = ce.next();
+                            if (cell.getCellType() == CellType.STRING)
+                            {
+                                list.add(cell.getStringCellValue());
+                            }
+                            else
+                            {
+                                list.add(NumberToTextConverter.toText(cell.getNumericCellValue()));
+                                //list.add(String.valueOf(cell.getNumericCellValue()));
+                            }
                         }
                     }
                 }
