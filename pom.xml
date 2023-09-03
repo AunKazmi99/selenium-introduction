@@ -9,7 +9,7 @@
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>4.8.3</version>
+        <version>4.12.0</version>
     </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -75,6 +75,20 @@
             <artifactId>poi</artifactId>
             <version>5.2.3</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v116 -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v116</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+
+
+        <!--<dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v116</artifactId>
+            <version>4.8.3</version> &lt;!&ndash; Make sure the version matches your Selenium version &ndash;&gt;
+        </dependency>-->
 
 
     </dependencies>
