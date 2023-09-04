@@ -18,8 +18,8 @@ public class ChromeProfile {
         options.addArguments("--user-data-dir=C:\\Users\\AunAbbas\\AppData\\Local\\Google\\Chrome\\User Data\\");
         options.addArguments("--profile-directory=Profile 1");
 
-        ChromeDriver driver = new ChromeDriver(options);
-        
+        WebDriver driver = new ChromeDriver(options);
+
         driver.get("https://dev-online-ordering.innowi.com/branch/maak");
         driver.quit();
     }
